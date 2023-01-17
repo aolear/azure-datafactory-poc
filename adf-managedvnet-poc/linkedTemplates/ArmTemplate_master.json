@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-managedvnet-poc"
 		},
+		"AutoResolveIntegrationRuntime_name": {
+			"type": "string",
+			"defaultValue": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -33,6 +37,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AutoResolveIntegrationRuntime_name": {
+						"value": "[parameters('AutoResolveIntegrationRuntime_name')]"
 					}
 				}
 			},

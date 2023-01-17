@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "adf-managedvnet-poc"
 		},
+		"AutoResolveIntegrationRuntime_name": {
+			"value": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]"
+		},
 		"containerUri": {
 			"value": ""
 		},
