@@ -7,6 +7,12 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-managedvnet-poc"
 		},
+		"pipeline1_dependsOn": {
+			"type": "array",
+			"defaultValue": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
 		"AutoResolveIntegrationRuntime_name": {
 			"type": "string",
 			"defaultValue": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]"
@@ -40,6 +46,9 @@
 					},
 					"AutoResolveIntegrationRuntime_name": {
 						"value": "[parameters('AutoResolveIntegrationRuntime_name')]"
+					},
+					"pipeline1_dependsOn": {
+						"value": "[parameters('pipeline1_dependsOn')]"
 					}
 				}
 			},

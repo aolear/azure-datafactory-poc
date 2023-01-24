@@ -5,6 +5,11 @@
 		"factoryName": {
 			"value": "adf-managedvnet-poc"
 		},
+		"pipeline1_dependsOn": {
+			"value": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
 		"AutoResolveIntegrationRuntime_name": {
 			"value": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]"
 		}

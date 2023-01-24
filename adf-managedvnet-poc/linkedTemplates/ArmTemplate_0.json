@@ -10,6 +10,12 @@
 		"AutoResolveIntegrationRuntime_name": {
 			"type": "string",
 			"defaultValue": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]"
+		},
+		"pipeline1_dependsOn": {
+			"type": "array",
+			"defaultValue": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
 		}
 	},
 	"variables": {
@@ -92,9 +98,7 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
-			]
+			"dependsOn": "[parameters('pipeline1_dependsOn')]"
 		}
 	]
 }
