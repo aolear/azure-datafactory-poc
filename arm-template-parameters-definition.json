@@ -22,7 +22,9 @@
             "userAssignedIdentities": "="
         }
     },
-    "Microsoft.DataFactory/factories/pipelines": {},
+    "Microsoft.DataFactory/factories/pipelines": {
+        "dependsOn": "="
+    },
     "Microsoft.DataFactory/factories/integrationRuntimes": {
         "name": "=",
         "properties": {
