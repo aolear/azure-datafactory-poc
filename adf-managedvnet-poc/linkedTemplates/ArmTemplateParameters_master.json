@@ -13,6 +13,11 @@
 		"AutoResolveIntegrationRuntime_name": {
 			"value": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]"
 		},
+		"pipeline2_dependsOn": {
+			"value": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
 		"containerUri": {
 			"value": ""
 		},

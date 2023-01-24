@@ -17,6 +17,12 @@
 			"type": "string",
 			"defaultValue": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]"
 		},
+		"pipeline2_dependsOn": {
+			"type": "array",
+			"defaultValue": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -49,6 +55,9 @@
 					},
 					"pipeline1_dependsOn": {
 						"value": "[parameters('pipeline1_dependsOn')]"
+					},
+					"pipeline2_dependsOn": {
+						"value": "[parameters('pipeline2_dependsOn')]"
 					}
 				}
 			},
